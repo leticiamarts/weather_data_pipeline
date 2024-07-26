@@ -13,5 +13,17 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  app:
+    build: .
+    depends_on:
+      - postgres
+    environment:
+      - API_KEY=${API_KEY}
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
+    command: ["python", "scripts/main.py"]
+
 volumes:
   pgdata:
