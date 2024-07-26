@@ -1,8 +1,13 @@
 import requests
 import polars as pl
 from datetime import datetime
+from dotenv import load_dotenv
+import os
 
-API_KEY = ''
+load_dotenv()
+
+API_KEY = os.getenv('API_KEY')
+
 BASE_URL = 'http://api.openweathermap.org/data/2.5/weather'
 
 cities = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Porto Alegre", "Curitiba", "Vitória", "Salvador"]
