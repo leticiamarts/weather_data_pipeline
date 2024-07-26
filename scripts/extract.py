@@ -5,7 +5,7 @@ from datetime import datetime
 API_KEY = ''
 BASE_URL = 'http://api.openweathermap.org/data/2.5/weather'
 
-cities = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Porto Alegre", "Curitiba"]
+cities = ["São Paulo", "Rio de Janeiro", "Belo Horizonte", "Porto Alegre", "Curitiba", "Vitória", "Salvador"]
 
 def fetch_weather_data(city):
     params = {
@@ -32,6 +32,10 @@ def extract_weather_data(cities):
         weather_data.append(weather_info)
     return weather_data
 
-weather_data = extract_weather_data(cities)
-df_weather = pl.DataFrame(weather_data)
-df_weather.write_parquet('data/raw/weather_data.parquet')
+def save_raw_data(data, path):
+    df_weather = pl.DataFrame(data)
+    df_weather.write_parquet(path)
+
+if __name__ == "__main__":
+    data = extract_weather_data(cities)
+    save_raw_data(data, 'data/raw/weather_data.parquet')
