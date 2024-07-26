@@ -20,7 +20,7 @@ The [load](scripts\load.py) script is responsible for loading data in postgreSQL
 
 A [docker-compose](docker-compose.yml) was used to setup a postgres database through the command `docker-compose up -d`.
 
-[Beekeeper Studio](https://www.beekeeperstudio.io/) was used to visualize and manipulate data after the ETL process and can be used to query data. Some beekeeper usage can be found at [beekeeper](beekeeper/tutorial.md) tutorial.
+[Beekeeper Studio](https://www.beekeeperstudio.io/) was used to visualize and manipulate data after the ETL process and can be used to query data. Some beekeeper usage can be found at [beekeeper](docs/beekeeper/tutorial.md) tutorial.
 
 A [Data Visualization and Analysis notebook](notebooks\data_analysis.ipynb) was used to plot some graphics about the data such as hystogram and scatter plots.
 
