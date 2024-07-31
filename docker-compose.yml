@@ -19,13 +19,13 @@ services:
       - postgres
     container_name: weather_python
     environment:
-      DATABASE_URL: postgres://user:password@postgres:5432/weather_db
+      DATABASE_URL: postgres://username:password@postgres:5432/weather_db
+      API_KEY: ${API_KEY}
     volumes:
       - .:/app
     ports:
-      - "8000:8000" 
-    command: ["python", "scripts/main.py"] 
-
+      - "8000:8000"
+    command: ["tail", "-f", "/dev/null"]
 
 volumes:
   pgdata:

@@ -8,4 +8,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "scripts/main.py"]
+RUN apt-get update && apt-get install -y bash
+
+CMD ["tail", "-f", "/dev/null"]
