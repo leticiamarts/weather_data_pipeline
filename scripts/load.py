@@ -3,7 +3,7 @@ import polars as pl
 
 DB_USER = 'username'
 DB_PASSWORD = 'password'
-DB_HOST = 'localhost'
+DB_HOST = 'postgres'
 DB_PORT = '5432'
 DB_NAME = 'weather_db'
 

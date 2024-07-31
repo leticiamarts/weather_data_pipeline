@@ -2,8 +2,30 @@
 A Weather ETL pipeline using [Open Weather API](https://openweathermap.org/) for consuming data that is transformed and loaded in Postgres Database.
 
 ## Environment
-I personally recommend the usage of a virtual environment. It can be setup by following the [python venv documentation](https://docs.python.org/3/library/venv.html) for different operating systems.
-I used the following commands using `Git Bash` on Windows:
+
+### Docker
+A docker environment has been set up with `postgres` and `python` services.
+[Dockerfile](Dockerfile) is responsible for setting a python image for the `app` service, and installing dependencies according to [requirements.txt](requirements.txt).
+[Docker Compose](docker-compose.yml) uses the Dockerfile to build a image for the `app` service. It also defines and configures both `postgres` and `python` services and how they interact.
+
+Run the commands below `Git Bash` on Windows or any other shell of your interest:
+```
+docker-compose build
+```
+
+```
+docker-compose up -d
+```
+
+```
+winpty docker exec -it weather_python sh
+```
+
+
+
+### Venv Alternative
+Python Venv can be used as well. It can be setup by following the [python venv documentation](https://docs.python.org/3/library/venv.html) for different operating systems.
+Run the following commands using `Git Bash` on Windows or any other shell of your interest:
 
 ```
 python -m venv .venv
