@@ -14,8 +14,8 @@
 
 After the ETL process, depending on the cities of choice, the result should be something like this:
 
-![alt text](weather_data_example.png)
+![weather_data_example](weather_data_example.png)
 
 A query example could be something like this:
 
-![alt text](query_temperature_between_22_and_24.png)
+![query_temperature_example](query_temperature_between_22_and_24.png)
