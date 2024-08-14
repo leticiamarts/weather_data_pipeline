@@ -3,7 +3,7 @@ A Weather ETL pipeline using [Open Weather API](https://openweathermap.org/) for
 
 ## Current Data Pipeline Workflow
 
-![Excalidraw Flow](docs\assets\excalidraw_weather_data_pipeline.png)
+![Excalidraw Flow](docs/assets/excalidraw_weather_data_pipeline.png)
 
 ## Environment
 
