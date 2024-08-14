@@ -9,9 +9,23 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: weather_db
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    depends_on:
+      - postgres
+    container_name: weather_python
+    environment:
+      DATABASE_URL: postgres://username:password@postgres:5432/weather_db
+      API_KEY: ${API_KEY}
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    command: ["tail", "-f", "/dev/null"]
 
 volumes:
   pgdata:
