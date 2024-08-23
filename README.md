@@ -62,7 +62,7 @@ docker-compose up -d
 
 ### Visualization
 
-A [Data Visualization and Analysis notebook](notebooks\data_analysis.ipynb) was used to plot some graphics about the data such as hystogram and scatter plots.
+A [Data Visualization and Analysis Page](analysis\report.md) was used to plot some graphics about the data such as hystogram and scatter plots. The script can be found at `analysis\data_analysis.py`
 
 
 ## Tests
