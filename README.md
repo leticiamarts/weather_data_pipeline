@@ -1,5 +1,5 @@
 # Weather Data Pipeline
-A Weather Data pipeline using [Open Weather API](https://openweathermap.org/) for consuming data that is transformed and loaded in Postgres Database.
+A Weather Data pipeline using [Open Weather API](https://openweathermap.org/) for consuming data that is transformed and loaded in a Postgres Database.
 
 ## Current Data Pipeline Workflow
 
