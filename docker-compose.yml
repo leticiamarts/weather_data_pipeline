@@ -13,19 +13,28 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  etl:
+    build: .
+    container_name: weather_etl
+    environment:
+      DATABASE_URL: postgres://username:password@postgres:5432/weather_db
+    volumes:
+      - .:/app
+    command: ["python", "/app/scripts/etl.py"]  
+
   app:
     build: .
     depends_on:
       - postgres
-    container_name: weather_python
+    container_name: weather_django
     environment:
       DATABASE_URL: postgres://username:password@postgres:5432/weather_db
       API_KEY: ${API_KEY}
     volumes:
       - .:/app
     ports:
-      - "8000:8000"
-    command: ["tail", "-f", "/dev/null"]
+      - "8001:8001"
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"] 
 
 volumes:
   pgdata:
